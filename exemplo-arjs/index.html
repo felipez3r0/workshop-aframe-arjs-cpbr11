@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Campus Party 2018</title>
+    <script src="js/aframe.min.js"></script>
+    <script src="js/aframe-ar.js"></script>
+    <style>#arjsDebugUIContainer{ display: none; }</style>
+  </head>
+  <body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded arjs='trackingMethod: best;sourceType: webcam;'>
+    	<a-assets>
+    	  <img id="campus" src="assets/campus.png">
+    	  <img id="mozilla" src="assets/mozilla.png">
+    	</a-assets>
+
+    	<a-entity geometry="primitive: torus; radius: 4; radiusTubular: 0.2;" scale="0.3 0.3 0.3" rotation="270 0 0" position="0 2 0" material="color: #333">
+    		<a-entity geometry="height:2;width:7" position="0 3 0" material="src:#campus"></a-entity>
+    		<a-entity geometry="height:2;width:7" position="0 -3 0" material="src:#mozilla"></a-entity>
+    	</a-entity>
+
+      <a-marker-camera preset='hiro'></a-marker-camera>
+    </a-scene>
+  </body>
+</html>
