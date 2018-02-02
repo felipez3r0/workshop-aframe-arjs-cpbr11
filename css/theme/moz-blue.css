@@ -1,0 +1,263 @@
+/**
+ * Default theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body:after {
+  position:absolute;
+  top:2px;
+  right:25px;
+  width:153px;
+  height:41px;
+  content:'';
+}
+
+.reveal {
+  font-family: "Open Sans",sans-serif;;
+  background: #1F64B0 ;
+  font-size: 36px;
+  font-weight: 200;
+  color: #FFF;
+}
+
+::selection {
+  color: white;
+  background: #ff5e99;
+  text-shadow: none; }
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 10px 0;
+  color: #FFF;
+  font-weight: 400;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
+
+.reveal h1 {
+  font-size: 72px
+  }
+
+.reveal h1 em {
+  font-weight: 100;
+  font-style: italic;
+}
+
+.reveal h1 strong {
+  font-weight: 900;
+}
+
+.reveal h1 .big {
+  font-size: 120px;
+}
+
+.reveal h1 .really-big {
+  font-size: 512px;
+}
+
+.reveal p em {
+  font-style: italic;
+}
+
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a:not(.image) {
+  color: #FFF;
+  text-decoration: none;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  -ms-transition: color .15s ease;
+  -o-transition: color .15s ease;
+  transition: color .15s ease; }
+
+.reveal a:not(.image):hover {
+  color: #FFF;
+  text-shadow: none;
+  border: none; }
+
+.reveal .roll span:after {
+  color: #fff;
+  background: #FF9500; }
+
+.reveal a.bottom {
+  position: absolute;
+  bottom:0px;
+  left:0px;
+}
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+.reveal section img {
+  margin: 15px 0px;
+  /*background: rgba(255, 255, 255, 0.12);*/
+  /*border: 4px solid #E66000;*/
+  /*box-shadow: 0 0 10px rgba(255, 149, 0, 0.15);*/
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear; }
+
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #E66000;
+  box-shadow: 0 0 20px rgba(255, 149, 0, 0.55); }
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls div.navigate-left,
+.reveal .controls div.navigate-left.enabled {
+  border-right-color: #FFF; }
+
+.reveal .controls div.navigate-right,
+.reveal .controls div.navigate-right.enabled {
+  border-left-color: #FFF; }
+
+.reveal .controls div.navigate-up,
+.reveal .controls div.navigate-up.enabled {
+  border-bottom-color: #FFF; }
+
+.reveal .controls div.navigate-down,
+.reveal .controls div.navigate-down.enabled {
+  border-top-color: #FFF; }
+
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: #FF9500; }
+
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: #FF9500; }
+
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: #FF9500; }
+
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: #FF9500; }
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2); }
+
+.reveal .progress span {
+  background: #FF9500;
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -o-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+/* Custum */
+.reveal img{
+  border-radius: 10px;
+  width: 90%;
+}
+
+.reveal img.img-inline {
+  height: 40px;
+  vertical-align: middle;
+}
+
+.reveal img.avatar {
+  border-radius: 100%;
+  width: 20%;
+  height: auto;
+  border: 2px solid #fff;
+}
+
+.reveal img.poster {
+  width: 40%;
+}
+
+.reveal img.logos {
+  width: 40%;
+}
+
+.reveal ul {
+  width: 70%;
+  margin: 50px auto;
+}
+.reveal ul li {
+  text-align: left;
+  padding: 15px 0;
+  list-style-type: '-- ';
+}
+
+.reveal ul li em {
+  font-style: italic;
+}
+
+.reveal .author {
+  text-align: right;
+  font-style: italic;
+}
+
+.reveal .hashtag-moz {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+}
+
+.reveal .hashtag-moz p {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.reveal .campus {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 200px;
+}
+
+.reveal .campus img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.reveal img.emoji {
+  margin: 0;
+  width: 1.2em;
+  height: 1.2em;
+  display: inline-block;
+  margin: 0em;
+  vertical-align: -.2em;
+}
+
+.reveal code {
+  text-align: left;
+  border-radius: 10px;
+  padding: 30px;
+  background: #222;
+  font-size: 1.5rem;
+}
+
+.reveal .iframe {
+  background: #fff;
+  border-radius: 10px;
+}
+
+.reveal .videos-ok {
+  background: #fff;
+  border-radius: 10px;
+  width: 800px;
+  height: auto;
+}

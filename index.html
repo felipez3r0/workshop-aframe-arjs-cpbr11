@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Realidade aumentada descomplicada com A-frame e AR.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moz-blue.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Realidade aumentada descomplicada!</h1>
+					<h2>A-frame e AR.js</h2>
+					<img src="img/cover.png" alt="VR headset" />
+				</section>
+				<section data-background="design/back-11.png">
+					<img src="img/avatar.jpg" alt="Eu" class="avatar">
+					<h1>Felipe Do E. Santo</h1>
+					<p style="text-align:left;">
+						- Professor<br />
+						- Desenvolvedor Web desde 2006<br>
+						- Mozillian e Tech Speaker<br>
+					</p>
+				</section>
+				<section>
+					<section>
+						<img src="img/logoMozilla.png" style="max-width:400px;" />
+						<p>
+							Nossa missão é garantir que a internet seja um recurso público, aberto e acessível a todos.
+						</p>
+						<br />
+						<p>
+							Uma internet que realmente coloque as pessoas em primeiro lugar!
+						</p>
+					</section>
+					<section>
+						<h1>Algumas iniciativas</h1>
+						<p>
+							Rust, WebVR, Mozilla Campus Clubs, Leadership Toolkit, Mozilla Clubs entre muitas outras!
+						</p>
+					</section>
+				</section>
+				<section data-background="img/oculos-vr.gif"></section>
+				<section>
+					<section>
+						<h1>WebVR</h1>
+						<p>
+							WebVR é uma plataforma de realidade virtual com todas as vantagens da web: aberta, conectada e instantânea.
+						</p>
+						<br />
+						<p>
+							É um conjunto de APIs no Browser que habilitam a rederização WebGL direto para os headsets e aceso a vários sensores.
+						</p>
+					</section>
+					<section>
+						<h1>Onde posso utilizar hoje?</h1>
+						<br />
+						<p>
+							Firefox, Chrome, Safari e Samsung Internet Browser no celular.
+						</p>
+						<br />
+						<p>
+							Firefox Beta e Chromium no desktop.
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>A-Frame</h1>
+						<p>
+							A-Frame é um framework opensource, lançado em dezembro de 2015 pela Mozilla para a criação de cenas 3D e de realidade virtual para a Web.
+						</p>
+					</section>
+					<section>
+						<h1>Recursos</h1>
+						<ul>
+							<li>Baseado em HTML</li>
+							<li>Multiplataforma</li>
+							<li>Arquitetura Entidade-Componente</li>
+							<li>Performance</li>
+							<li>Compatível com várias bibliotecas e frameworks</li>
+							<li>Inspetor visual</li>
+							<li>Componentes / Registry</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h1>Instalando</h1>
+					<pre>
+						<code data-trim contenteditable>
+https://aframe.io/releases/0.7.0/aframe.min.js
+
+$ npm install aframe
+					</code>
+				</pre>
+				</section>
+				<section>
+					<h2>Exemplo</h2>
+					<pre>
+						<code class="html">
+<a-scene>
+  <a-entity rotation="0 45 45" geometry="primitive: box" position="0 2 -2" material="src: img/resources/firefox.jpg"></a-entity>
+  <a-sky color="#222"></a-sky>
+</a-scene>
+					</code>
+				</pre>
+				</section>
+				<section>
+					<h2>Hello world</h2>
+					<iframe src="exemplo1.html" width="800px" height="600px" class="iframe"></iframe>
+				</section>
+				<section>
+					<pre>
+						<code class="html" data-trim>
+&#x3C;html&#x3E;
+
+  &#x3C;head&#x3E;
+    &#x3C;script src=&#x22;js/aframe.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+  &#x3C;/head&#x3E;
+
+  &#x3C;body&#x3E;
+    &#x3C;a-scene&#x3E;
+      &#x3C;a-entity rotation=&#x22;0 45 45&#x22; geometry=&#x22;primitive: box&#x22; position=&#x22;0 2 -2&#x22; material=&#x22;src: img/resources/firefox.jpg&#x22;&#x3E;&#x3C;/a-entity&#x3E;
+      &#x3C;a-sky color=&#x22;#222&#x22;&#x3E;&#x3C;/a-sky&#x3E;
+    &#x3C;/a-scene&#x3E;
+  &#x3C;/body&#x3E;
+
+&#x3C;/html&#x3E;
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Mais objetos!</h2>
+					<iframe src="exemplo2.html" width="800px" height="600px" class="iframe"></iframe>
+				</section>
+				<section>
+					<pre>
+						<code class="html" data-trim>
+<a-scene>
+	<a-entity rotation="0 45 45" geometry="primitive: cylinder; height: 1; radius: 0.5" position="-2 2 -2" material="src: img/resources/blocks.jpeg"></a-entity>
+	<a-entity rotation="0 45 45" geometry="primitive: cone; radiusBottom: 1; radiusTop: 0.1" position="0 2 -3" material="src: img/resources/birthday.jpg"></a-entity>
+	<a-entity rotation="0 45 45" geometry="primitive: sphere; radius: 1" position="2 2 -2" material="src: img/resources/earth.png"></a-entity>
+	<a-sky color="#ECECEC"></a-sky>
+</a-scene>
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Câmera e eventos</h2>
+					<iframe src="exemplo3.html" width="800px" height="600px" class="iframe"></iframe>
+				</section>
+				<section>
+					<h2>Câmera</h2>
+					<pre>
+						<code class="html" data-trim>
+<a-entity position="0 0 4">
+  <a-camera id="camera">
+    <a-cursor color="#4CC3D9"></a-cursor>
+  </a-camera>
+</a-entity>
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Eventos</h2>
+					<pre>
+						<code class="html" data-trim>
+<a-box color="#F16745" position="0 0 -2" rotation="0 45 45" scale="2 2 2">
+  <a-animation attribute="scale" begin="mouseenter" dur="300" to="3 3 3"></a-animation>
+  <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
+</a-box>
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Modelos 3D</h2>
+					<iframe src="exemplo4.html" width="800px" height="600px" class="iframe"></iframe>
+				</section>
+				<section>
+					<pre>
+						<code class="html" data-trim>
+<a-assets>
+  <a-asset-item id="fox-obj" src="obj/low-poly-fox-by-pixelmannen.obj"></a-asset-item>
+  <a-asset-item id="fox-mtl" src="obj/low-poly-fox-by-pixelmannen.mtl"></a-asset-item>
+</a-assets>
+
+<a-entity obj-model="obj: #fox-obj; mtl: #fox-mtl" scale="0.1 0.1 0.1" position="0 0 -14" rotation="0 35 0"></a-entity>
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Mixins</h2>
+					<iframe src="exemplo5.html" width="800px" height="600px" class="iframe"></iframe>
+				</section>
+				<section>
+					<pre>
+						<code class="html" data-trim>
+<a-assets>
+  <a-mixin id="box" geometry="primitive: box"></a-mixin>
+  <a-mixin id="tall" geometry="height: 10"></a-mixin>
+  <a-mixin id="wide" geometry="width: 10"></a-mixin>
+</a-assets>
+<a-entity mixin="wide tall box" geometry="depth: 2" position="0 0 -14"></a-entity>
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Links</h2>
+					<iframe src="exemplo6.html" width="800px" height="600px" class="iframe"></iframe>
+				</section>
+				<section>
+					<pre>
+						<code class="html" data-trim>
+<a-assets>
+  <img id="exemplo1" src="img/exemplo1.png">
+  <img id="exemplo2" src="img/exemplo2.png">
+  <img id="exemplo3" src="img/exemplo3.png">
+</a-assets>
+
+<a-link href="exemplo1.html" image="#exemplo1" title="Exemplo 1" position="-3 0 -3"></a-link>
+<a-link href="exemplo2.html" image="#exemplo2" title="Exemplo 2" position="0 0 -3"></a-link>
+<a-link href="exemplo3.html" image="#exemplo3" title="Exemplo 3" position="3 0 -3"></a-link>
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h1>Mais detalhes</h1>
+					<ul>
+						<li><a href="https://aframe.io/">http://aframe.io</a></li>
+						<li><a href="http://mozvr.com">http://mozvr.com</a></li>
+						<li><a href="https://t.me/MozillaVR">Telegram: @MozillaVR</a></li>
+						<li><a href="https://mozvr.github.io/webvr-spec/">https://mozvr.github.io/webvr-spec/</a></li>
+						<li><a href="https://aframevr-slack.herokuapp.com/">https://aframevr-slack.herokuapp.com</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>AR.js - Efficient Augmented Reality for the Web</h1>
+				</section>
+
+				<section>
+					<h1>#Comofaz?</h1>
+					<pre>
+						<code class="html" data-trim>
+<script src="js/aframe-ar.js"></script>
+...
+<body style="margin : 0px; overflow: hidden;">
+	<a-scene embedded arjs='trackingMethod: best;sourceType: webcam;'>
+		...
+		<a-marker-camera preset='hiro'></a-marker-camera>
+	</a-scene>
+</body>
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h1>Obrigado!</h1>
+					<h2>#MozillaBrasil #CPBR11 #Aframe</h2>
+					<br>
+					<ul>
+						<li><a href="http://twitter.com/felipez3r0">Twitter - @felipez3r0</a></li>
+						<li><a href="mailto:felipe@2ilabs.com.br">E-mail - felipe@2ilabs.com.br</a></li>
+						<li><a href="https://github.com/felipez3r0">Github - github.com/felipez3r0</a></li>
+					</ul>
+	      </section>
+			</div>
+			<div class="hashtag-moz">
+				<p><strong>#MozillaBrasil</strong></p>
+				<p><strong>#CPBR11</strong> <strong>#Aframe</strong></p>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				width: '100%',
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
